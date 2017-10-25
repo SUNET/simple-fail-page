@@ -13,6 +13,9 @@ import (
 	"io/ioutil"
 )
 
+var name string = "simple-fail-page"
+var version string = "0.0.0"
+
 type Configuration struct {
 	UrlPathToFilePath map[string]string
 }
@@ -52,6 +55,7 @@ func serveFile(urlPathToFilePath map[string]string) http.Handler {
 }
 
 func main() {
+	log.Printf("%s %s", name, version)
 	// Handle args
 	var listenTo string
 	var configFile string
