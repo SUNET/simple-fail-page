@@ -1,0 +1,5 @@
+---
+urlpathtofilepath:
+  "/": "index.html"
+  "/index.html": "index.html"
+  "/assets/style.css": "assets/style.css"
