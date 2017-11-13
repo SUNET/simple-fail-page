@@ -3,3 +3,9 @@ urlpathtofilepath:
   "/": "index.html"
   "/index.html": "index.html"
   "/assets/style.css": "assets/style.css"
+redirect404: true
+jsonresponse:
+  # Only handles strings
+  status: Unavailable
+  error: true
+  message: Service is temporarily unavailable
