@@ -16,7 +16,7 @@ import (
 )
 
 var name string = "simple-fail-page"
-var version string = "0.0.1"
+var version string = "0.0.2"
 
 type Configuration struct {
 	UrlPathToFilePath map[string]string
