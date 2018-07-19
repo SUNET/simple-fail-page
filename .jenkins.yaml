@@ -1,0 +1,15 @@
+build_in_docker:
+  image: docker.sunet.se/sunet/docker-jenkins-golang-job
+
+script:
+  - export GOPATH=$WORKSPACE
+  - go get github.com/mitchellh/gox
+  - go get gopkg.in/yaml.v2
+  - $GOPATH/bin/gox -os="linux" -arch="amd64" -output "simple-fail-page.{{.OS}}.{{.Arch}}" -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose
+
+docker_name: library/simple-fail-page
+
+triggers:
+  cron: "@weekly"
+
+clean_workspace: true
