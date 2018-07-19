@@ -1,5 +1,6 @@
 build_in_docker:
   image: docker.sunet.se/sunet/docker-jenkins-golang-job
+  verbose: true
 
 script:
   - export GOPATH=$WORKSPACE
