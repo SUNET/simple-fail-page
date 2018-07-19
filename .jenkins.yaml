@@ -1,6 +1,5 @@
 build_in_docker:
   image: docker.sunet.se/sunet/docker-jenkins-golang-job
-  verbose: true
 
 environment_variables:
   PATH: "/go/bin:/usr/local/go/bin:$PATH"
