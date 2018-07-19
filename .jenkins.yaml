@@ -5,8 +5,10 @@ build_in_docker:
 environment_variables:
   PATH: "/go/bin:/usr/local/go/bin:$PATH"
   GOPATH: "$WORKSPACE"
+  GOTMPDIR: "$WORKSPACE/tmp"
 
 script:
+  - mkdir tmp
   - go get github.com/mitchellh/gox
   - go get gopkg.in/yaml.v2
   - '$GOPATH/bin/gox -os="linux" -arch="amd64" -output "simple-fail-page.{{.OS}}.{{.Arch}}" -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose'
